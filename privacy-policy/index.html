@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Kebijakan Privasi — Prayer Alarm</title>
+<meta name="description" content="Kebijakan privasi aplikasi Prayer Alarm.">
+<link rel="icon" href="../icon.png" type="image/png">
+<style>
+:root{
+  --ink:#062B26; --deep:#0E4F45; --teal:#00695C; --teal-light:#14867A;
+  --mint:#A5D6A7; --pale:#E8F5E9; --white:#FFFFFF;
+  --gold:#F2C14E; --gold-hi:#FFE9A8; --radius:16px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pale);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:2px}
+.app-bar{background:var(--teal);color:var(--pale);position:sticky;top:0;z-index:20;
+  box-shadow:0 2px 10px rgba(6,43,38,.28)}
+.app-bar-inner{max-width:880px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.app-bar img{width:40px;height:40px;border-radius:10px;image-rendering:pixelated;
+  box-shadow:0 0 0 2px rgba(232,245,233,.18)}
+.app-bar .titles{display:flex;flex-direction:column;line-height:1.2}
+.app-bar .app{font-weight:700;font-size:1.02rem;letter-spacing:.2px}
+.app-bar .sub{font-size:.76rem;color:var(--pale);opacity:.85}
+.lang{margin-left:auto;display:inline-flex;gap:4px;padding:4px;border-radius:999px;
+  background:rgba(232,245,233,.14)}
+.lang button{border:0;background:transparent;color:var(--pale);font:inherit;font-weight:700;
+  font-size:.82rem;padding:7px 14px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold-hi);color:var(--ink)}
+.lang button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}
+main{max-width:880px;margin:0 auto;padding:16px 16px 40px}
+.hero{background:var(--deep);color:var(--pale);border-radius:var(--radius);padding:22px;
+  margin:4px 0 16px;box-shadow:0 2px 10px rgba(6,43,38,.22)}
+.hero h1{margin:0 0 8px;font-size:1.45rem;line-height:1.25}
+.hero .meta{margin:0;font-size:.86rem;color:var(--pale);opacity:.92}
+.hero .meta b,.hero .meta strong{color:var(--gold-hi);font-weight:600}
+.hero .meta code{color:var(--gold-hi);background:transparent}
+.card{background:var(--white);border-radius:var(--radius);padding:20px 22px 6px;
+  margin:14px 0;box-shadow:0 2px 8px rgba(6,43,38,.10)}
+.card h2{margin:0 0 10px;font-size:1.08rem;color:var(--teal);line-height:1.3}
+.card h3{margin:16px 0 6px;font-size:.98rem;color:var(--deep)}
+.card p,.card li{font-size:.94rem}
+.card p{margin:0 0 12px}
+.card ul,.card ol{margin:0 0 12px;padding-left:1.25rem}
+.card li{margin:4px 0}
+.card table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:.88rem;
+  display:block;overflow-x:auto}
+.card th,.card td{padding:8px 10px;border-bottom:1px solid #D7E7DA;text-align:left;vertical-align:top}
+.card th{color:var(--teal);font-weight:600;white-space:nowrap}
+.card tr:last-child td{border-bottom:0}
+.card code{background:var(--pale);border-radius:4px;padding:1px 4px;font-size:.85em}
+footer{max-width:880px;margin:0 auto;padding:8px 16px 40px;color:var(--deep);font-size:.82rem}
+footer .rule{height:1px;background:#CFE3D2;margin:12px 0}
+.landing{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.landing .card{text-align:center;padding:28px 24px}
+.landing h1{margin:0 0 8px;color:var(--teal);font-size:1.5rem}
+.landing p{margin:0 0 18px}
+.landing a.button{display:inline-block;background:var(--teal);color:var(--pale);
+  padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:600}
+@media (max-width:520px){
+  .app-bar .sub{display:none}
+  .hero{padding:18px}
+  .card{padding:18px 16px 4px}
+  .lang button{padding:6px 11px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="app-bar">
+  <div class="app-bar-inner">
+    <img src="../icon.png" alt="">
+    <div class="titles">
+      <span class="app">Prayer Alarm</span>
+      <span class="sub">Kebijakan Privasi · Privacy Policy</span>
+    </div>
+    <div class="lang" role="group" aria-label="Bahasa / Language">
+        <button type="button" data-lang="id" aria-pressed="true">ID</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+<main>
+    <div id="policy-id" lang="id">
+      <section class="hero">
+        <h1>Kebijakan Privasi</h1>
+        <p class="meta">
+        <strong>Terakhir diperbarui:</strong> 22 November 2026<br>
+        <strong>Aplikasi:</strong> Prayer Alarm (<code>com.trazire.prayerapp</code>), versi 1.0<br>
+        <strong>Pengembang:</strong> Trazire Gamedev Team
+        </p>
+      </section>
+      <section class="card">
+        <h2>1. Ringkasan</h2>
+<p>Prayer Alarm adalah aplikasi pengingat waktu shalat. Aplikasi ini:</p>
+<ul>
+<li><strong>tidak</strong> membuat akun dan <strong>tidak</strong> meminta login;</li>
+<li><strong>tidak</strong> menampilkan iklan;</li>
+<li><strong>tidak</strong> memakai analitik, pelacak, atau pelaporan crash pihak ketiga;</li>
+<li><strong>tidak</strong> menjual atau menyewakan data Anda kepada siapa pun;</li>
+<li>menyimpan jadwal, pengaturan, dan lokasi pilihan Anda <strong>di perangkat Anda sendiri</strong>.</li>
+</ul>
+<p>Data hanya meninggalkan perangkat dalam tiga keadaan: (a) meminta jadwal shalat ke sumber
+jadwal (Kemenag, dan sebagai cadangan Aladhan), (b) layanan lokasi sistem operasi yang
+menyediakan posisi perangkat saat Anda meminta deteksi, dan (c) layanan geocoding sistem
+operasi, yang menerjemahkan koordinat menjadi nama kota <strong>dan</strong> menerjemahkan nama kota yang
+Anda pilih menjadi koordinat — yang terakhir ini juga terjadi bila Anda tidak pernah memberi
+izin lokasi (lihat bagian 4c).</p>
+      </section>
+      <section class="card">
+        <h2>2. Data yang diproses</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Kapan</th>
+<th>Disimpan di perangkat?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lokasi perkiraan dan presisi</strong> (garis lintang/bujur dari GPS)</td>
+<td>Dari GPS hanya setelah Anda menekan "Deteksi Lokasi Otomatis" di Beranda atau "Perbarui Lokasi" di layar Jadwal, dan hanya dengan izin lokasi. Untuk kota yang Anda pilih manual, koordinatnya berasal dari geocoding nama kota (bagian 4c) — tanpa membaca posisi perangkat</td>
+<td>Ya — posisi yang dipakai untuk kota tersebut disimpan agar jadwal dan arah kiblat tetap bekerja tanpa internet: koordinat hasil geocoding kota, atau posisi perangkat itu sendiri bila hanya provinsinya yang dikenali (aplikasi lalu memakai ibu kota provinsi)</td>
+</tr>
+<tr>
+<td><strong>Kota/provinsi pilihan Anda</strong> (nama, atau ID provinsi/kota Kemenag bila dipilih dari daftar)</td>
+<td>Saat deteksi otomatis atau pencarian kota manual</td>
+<td>Ya</td>
+</tr>
+<tr>
+<td><strong>Jadwal shalat bulanan</strong> (waktu shalat, tanggal, sumber)</td>
+<td>Setelah jadwal berhasil diambil</td>
+<td>Ya — berkas cache di penyimpanan internal aplikasi, kedaluwarsa setelah 7 hari</td>
+</tr>
+<tr>
+<td><strong>Pengaturan aplikasi</strong> (waktu shalat yang aktif, pengingat, nada alarm, tema)</td>
+<td>Saat Anda mengubahnya</td>
+<td>Ya</td>
+</tr>
+</tbody>
+</table>
+<p>Aplikasi tidak meminta nama, alamat email, nomor telepon, kontak, foto, berkas, mikrofon,
+kamera, riwayat penelusuran, atau data kesehatan. Aplikasi tidak membaca ID iklan
+(<code>AD_ID</code>) dan tidak menyertakan SDK periklanan.</p>
+      </section>
+      <section class="card">
+        <h2>3. Izin dan pilihan Anda</h2>
+<ul>
+<li><strong>Lokasi (<code>ACCESS_COARSE_LOCATION</code>, <code>ACCESS_FINE_LOCATION</code>)</strong> diminta lewat dialog sistem
+  hanya ketika Anda memilih deteksi otomatis (Beranda) atau "Perbarui Lokasi" (Jadwal).
+  Menolak izin ini tidak mematikan aplikasi: Anda dapat memilih provinsi dan kota/kabupaten
+  secara manual, dan dalam jalur manual itu tidak ada posisi perangkat yang dibaca. Yang tetap
+  terjadi hanyalah nama kota yang Anda pilih dikirim ke layanan geocoding sistem untuk
+  diterjemahkan menjadi koordinat (bagian 4c); tanpa hasil geocoding, aplikasi memakai titik
+  pusat ibu kota provinsi yang sudah ada di dalam aplikasi.</li>
+<li><strong>Notifikasi (<code>POST_NOTIFICATIONS</code>)</strong> dipakai untuk menampilkan alarm dan pengingat waktu
+  shalat. Penolakannya terlihat jelas di dalam aplikasi.</li>
+<li><strong>Alarm presisi (<code>SCHEDULE_EXACT_ALARM</code>)</strong> dipakai agar alarm berbunyi tepat waktu. Tanpa
+  izin ini alarm tetap berbunyi, tetapi dapat terlambat hingga 10 menit; aplikasi menjelaskan
+  hal ini sebelum membuka layar pengaturan sistem.</li>
+<li><strong><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>VIBRATE</code>, <code>WAKE_LOCK</code></strong>
+  dipakai untuk mengambil jadwal, memulihkan alarm setelah perangkat dinyalakan ulang,
+  bergetar, dan membunyikan alarm saat layar mati. Tidak satu pun dari izin ini mengumpulkan
+  data pribadi.</li>
+</ul>
+      </section>
+      <section class="card">
+        <h2>4. Ke mana data dikirim</h2>
+<p>Kami tidak mengoperasikan server. Data hanya dikirim ke pihak berikut, dan hanya seperti
+yang dijelaskan di bawah.</p>
+<p><strong>a. Kementerian Agama RI — Bimas Islam (<code>bimasislam.kemenag.go.id</code>).</strong>
+Sumber utama jadwal shalat. Saat meminta jadwal bulanan, aplikasi mengirim <strong>ID provinsi,
+ID kota/kabupaten, bulan, dan tahun</strong>. Aplikasi <strong>tidak</strong> mengirim koordinat GPS ke Kemenag.
+Nama kota yang Anda pilih (atau yang terdeteksi dari GPS) dicocokkan <strong>di dalam perangkat</strong>
+dengan daftar kota Kemenag; yang dikirim ke server hanya ID wilayah.</p>
+<p><strong>b. Layanan Aladhan (<code>api.aladhan.com</code>) — hanya sebagai cadangan.</strong>
+Jika jadwal Kemenag gagal diambil (misalnya server tidak dapat dihubungi), aplikasi meminta
+jadwal ke Aladhan dan mengirim <strong>garis lintang, garis bujur, bulan, tahun, dan metode
+perhitungan</strong>. Ini satu-satunya layanan di luar platform perangkat yang menerima koordinat
+(layanan lokasi dan geocoding platform dibahas di (c)). Jika Kemenag berhasil, Aladhan tidak
+dihubungi sama sekali. Bila kedua sumber gagal, aplikasi menghitung jadwal <strong>di dalam
+perangkat</strong> tanpa mengirim koordinat ke mana pun.</p>
+<p><strong>c. Layanan lokasi dan geocoding sistem operasi (Android, termasuk Google Play services).</strong>
+Aplikasi memakai dua API platform, dan keduanya dapat ditangani oleh penyedia layanan perangkat
+(pada perangkat bersertifikasi Google: Google) sebagai bagian dari sistem operasi.</p>
+<ul>
+<li><strong>Penyedia lokasi.</strong> Posisi perangkat diambil lewat Fused Location Provider dari Google Play
+  services — bukan dihitung sendiri oleh aplikasi. Panggilan ini hanya terjadi setelah Anda
+  meminta deteksi (Beranda) atau "Perbarui Lokasi" (Jadwal) dan memberi izin lokasi; tanpa izin,
+  panggilan itu tidak pernah dibuat.</li>
+<li><strong>Geocoding dua arah.</strong> API <code>Geocoder</code> milik Android dipakai untuk (i) menerjemahkan koordinat
+  menjadi nama kota setelah deteksi, dan (ii) menerjemahkan <strong>nama kota yang Anda pilih menjadi
+  koordinat</strong> saat Anda memilih kota secara manual — permintaan ini diulang setiap kali layar
+  jadwal memuat kota tersebut, bukan hanya sekali saat kota dipilih. Permintaan (ii) berisi teks
+  seperti "Kota Bandung, Jawa Barat, Indonesia" dan <strong>tetap dikirim meskipun Anda tidak pernah
+  memberi izin lokasi</strong> — teks itu adalah nama tempat, bukan posisi perangkat. Tanpa hasil dari
+  layanan ini, aplikasi memakai titik pusat ibu kota provinsi yang tersimpan di dalam aplikasi.</li>
+</ul>
+<p>Aplikasi tidak menyimpan hasil geocoding di server mana pun dan tidak mengirimkannya ke pihak
+lain selain sebagai koordinat pada permintaan jadwal ke (a)/(b) di atas. Kami tidak
+mengendalikan kebijakan penyedia layanan platform tersebut; permintaan ini tunduk pada
+kebijakan privasi sistem operasi perangkat Anda.</p>
+<p><strong>d. Tidak ada pihak lain.</strong> Selain sumber jadwal di (a) dan (b) serta layanan platform di (c),
+tidak ada penerima data: tidak ada jaringan iklan, broker data, atau penyedia analitik yang
+menerima data dari aplikasi ini.</p>
+<p>Seperti setiap permintaan web, server tujuan di atas dapat mencatat alamat IP dan waktu
+permintaan sebagai bagian dari log operasional mereka. Aplikasi tidak mengirim pengenal
+pengguna, akun, atau ID perangkat apa pun bersama permintaan tersebut. Semua koneksi memakai
+HTTPS; aplikasi menolak lalu lintas HTTP biasa (cleartext).</p>
+      </section>
+      <section class="card">
+        <h2>5. Yang tidak kami lakukan</h2>
+<ul>
+<li>Tidak ada akun, pendaftaran, atau profil pengguna.</li>
+<li>Tidak ada iklan dan tidak ada pembagian data untuk iklan atau pemasaran.</li>
+<li>Tidak ada analitik pemakaian, tidak ada pelaporan crash, tidak ada SDK Firebase.</li>
+<li>Tidak ada penjualan, penyewaan, atau pertukaran data pribadi.</li>
+<li>Tidak ada akses ke kontak, foto, berkas, mikrofon, kamera, atau lokasi latar belakang.</li>
+</ul>
+<p>Aplikasi tidak meminta lokasi di latar belakang. Posisi perangkat hanya dibaca saat Anda
+menekan "Deteksi Lokasi Otomatis" di Beranda atau "Perbarui Lokasi" di layar Jadwal, yaitu
+saat aplikasi sedang terbuka di layar itu; setelah tersimpan, alarm dan arah kiblat memakai
+posisi tersebut tanpa membaca GPS lagi.</p>
+      </section>
+      <section class="card">
+        <h2>6. Penyimpanan dan penghapusan</h2>
+<p>Semua data tersimpan di penyimpanan internal aplikasi pada perangkat Anda (tidak dapat
+dibaca aplikasi lain di perangkat yang tidak di-root), dan <strong>tidak</strong> disertakan dalam
+pencadangan cloud Android — aplikasi menetapkan <code>android:allowBackup="false"</code>.</p>
+<p>Anda dapat menghapus semuanya kapan saja:</p>
+<ul>
+<li>hapus data aplikasi lewat <strong>Setelan → Aplikasi → Prayer Alarm → Penyimpanan → Hapus data</strong>;
+  atau</li>
+<li>hapus pemasangan aplikasi.</li>
+</ul>
+<p>Setelah itu tidak ada salinan data yang tersisa di perangkat. Karena kami tidak memiliki
+server atau akun pengguna, tidak ada data di sisi kami yang perlu dihapus.</p>
+      </section>
+      <section class="card">
+        <h2>7. Keamanan</h2>
+<p>Semua komunikasi jaringan memakai HTTPS dengan sertifikat sistem, dan konfigurasi keamanan
+jaringan aplikasi memblokir lalu lintas cleartext. Cookie sesi Kemenag hanya hidup di memori
+selama aplikasi berjalan dan tidak pernah ditulis ke disk.</p>
+      </section>
+      <section class="card">
+        <h2>8. Anak-anak</h2>
+<p>Aplikasi ini adalah utilitas umum untuk pengguna dewasa dan remaja; aplikasi <strong>tidak</strong>
+ditujukan kepada anak-anak, dan tidak mengumpulkan data pribadi apa pun dari siapa pun,
+termasuk anak-anak. Aplikasi tidak memiliki iklan, pembelian, atau konten yang dibuat
+pengguna, sehingga tidak ada jalur bagi anak untuk membagikan informasi.</p>
+      </section>
+      <section class="card">
+        <h2>9. Hak Anda</h2>
+<p>Karena aplikasi tidak memiliki akun dan tidak menyimpan data di server kami, kendali penuh
+ada di perangkat Anda: Anda dapat melihat data apa yang tersimpan (jadwal, kota, pengaturan),
+menghapusnya (bagian 6), dan menolak atau mencabut izin lokasi serta notifikasi kapan saja
+lewat Setelan Android. Mencabut izin lokasi tidak menghapus kota yang sudah tersimpan; pilih
+kota lain atau hapus data aplikasi untuk menggantinya.</p>
+      </section>
+      <section class="card">
+        <h2>10. Perubahan kebijakan</h2>
+<p>Jika kebijakan ini berubah, tanggal "Terakhir diperbarui" di atas akan diubah dan versi baru
+dipublikasikan di URL yang sama. Perubahan yang memengaruhi cara data diproses akan
+dijelaskan di catatan rilis aplikasi.</p>
+      </section>
+      <section class="card">
+        <h2>11. Kontak</h2>
+<p>Pertanyaan tentang kebijakan ini atau tentang data di aplikasi:</p>
+<p><strong>support@trazire.com</strong>
+Trazire Gamedev Team</p>
+<hr />
+      </section>
+    </div>
+    <div id="policy-en" lang="en" hidden>
+      <section class="hero">
+        <h1>Privacy Policy</h1>
+        <p class="meta">
+        <strong>Last updated:</strong> 22 November 2026<br>
+        <strong>App:</strong> Prayer Alarm (<code>com.trazire.prayerapp</code>), version 1.0<br>
+        <strong>Developer:</strong> Trazire Gamedev Team
+        </p>
+      </section>
+      <section class="card">
+        <h2>1. Summary</h2>
+<p>Prayer Alarm is a prayer-time reminder app. It:</p>
+<ul>
+<li>does <strong>not</strong> create accounts and does <strong>not</strong> ask you to sign in;</li>
+<li>does <strong>not</strong> show ads;</li>
+<li>does <strong>not</strong> use analytics, trackers, or third-party crash reporting;</li>
+<li>does <strong>not</strong> sell or rent your data to anyone;</li>
+<li>stores your schedule, settings, and chosen location <strong>on your own device</strong>.</li>
+</ul>
+<p>Data leaves the device in only three cases: (a) requesting prayer times from a schedule source (Kemenag, with Aladhan as a fallback), (b) the operating system's location service providing the device position when you ask for detection, and (c) the operating system's geocoding service, which turns coordinates into a city name <strong>and</strong> turns the city name you pick into coordinates — the latter also happens if you never grant location permission (see section 4c).</p>
+      </section>
+      <section class="card">
+        <h2>2. Data processed</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>When</th>
+<th>Stored on device?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Approximate and precise location</strong> (latitude/longitude from GPS)</td>
+<td>From GPS only after you tap "Deteksi Lokasi Otomatis" on Home or "Perbarui Lokasi" on the Schedule screen, and only with location permission. For a manually chosen city the coordinates come from geocoding the city name (section 4c) — the device position is not read</td>
+<td>Yes — the position used for that city is stored so the schedule and qibla keep working without the internet: the geocoded city's coordinates, or the device position itself when only the province is recognised (the app then uses the province capital)</td>
+</tr>
+<tr>
+<td><strong>Your chosen city/province</strong> (name, or the Kemenag province/city ID when picked from the list)</td>
+<td>On automatic detection or a manual city search</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Monthly prayer schedule</strong> (prayer times, dates, source)</td>
+<td>After the schedule is fetched successfully</td>
+<td>Yes — a cache file in the app's internal storage, expiring after 7 days</td>
+</tr>
+<tr>
+<td><strong>App settings</strong> (enabled prayers, reminders, alarm tone, theme)</td>
+<td>When you change them</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>The app does not ask for your name, email address, phone number, contacts, photos, files, microphone, camera, browsing history, or health data. It does not read the advertising ID (<code>AD_ID</code>) and ships no advertising SDK.</p>
+      </section>
+      <section class="card">
+        <h2>3. Permissions and your choices</h2>
+<ul>
+<li><strong>Location (<code>ACCESS_COARSE_LOCATION</code>, <code>ACCESS_FINE_LOCATION</code>)</strong> is requested through the system dialog only when you choose automatic detection (Home) or "Perbarui Lokasi" (Schedule). Declining does not break the app: you can pick a province and city/regency manually, and on that manual path no device position is read. The only thing that still happens is that the city name you pick is sent to the system geocoding service to be turned into coordinates (section 4c); without a geocoding result the app uses the province capital's centre point, stored inside the app.</li>
+<li><strong>Notifications (<code>POST_NOTIFICATIONS</code>)</strong> are used to show prayer alarms and reminders. A denial is clearly visible inside the app.</li>
+<li><strong>Exact alarms (<code>SCHEDULE_EXACT_ALARM</code>)</strong> are used so the alarm rings on time. Without this permission the alarm still rings, but may be up to 10 minutes late; the app explains this before opening the system settings screen.</li>
+<li><strong><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>VIBRATE</code>, <code>WAKE_LOCK</code></strong> are used to fetch the schedule, restore alarms after a reboot, vibrate, and ring the alarm while the screen is off. None of these permissions collects personal data.</li>
+</ul>
+      </section>
+      <section class="card">
+        <h2>4. Where data is sent</h2>
+<p>We do not operate a server. Data is sent only to the parties below, and only as described.</p>
+<p><strong>a. Ministry of Religious Affairs of the Republic of Indonesia — Bimas Islam (<code>bimasislam.kemenag.go.id</code>).</strong>
+The primary prayer-time source. When requesting a monthly schedule, the app sends the <strong>province ID, city/regency ID, month, and year</strong>. The app does <strong>not</strong> send GPS coordinates to Kemenag. The city name you pick (or that is detected from GPS) is matched <strong>on the device</strong> against Kemenag's city list; only the region ID is sent to the server.</p>
+<p><strong>b. Aladhan service (<code>api.aladhan.com</code>) — fallback only.</strong>
+If the Kemenag schedule cannot be fetched (for example, the server is unreachable), the app requests the schedule from Aladhan and sends the <strong>latitude, longitude, month, year, and calculation method</strong>. This is the only service outside the device platform that receives coordinates (the platform location and geocoding services are covered in (c)). If Kemenag succeeds, Aladhan is not contacted at all. If both sources fail, the app computes the schedule <strong>on the device</strong> without sending coordinates anywhere.</p>
+<p><strong>c. Operating-system location and geocoding services (Android, including Google Play services).</strong>
+The app uses two platform APIs, and both may be handled by the device's service provider (Google on certified devices) as part of the operating system.</p>
+<ul>
+<li><strong>Location provider.</strong> The device position is obtained through the Fused Location Provider from Google Play services — it is not computed by the app itself. This call happens only after you request detection (Home) or "Perbarui Lokasi" (Schedule) and grant location permission; without permission the call is never made.</li>
+<li><strong>Two-way geocoding.</strong> Android's <code>Geocoder</code> API is used to (i) turn coordinates into a city name after detection, and (ii) turn the <strong>city name you pick into coordinates</strong> when you choose a city manually — this request is repeated every time the schedule screen loads that city, not only once when the city is chosen. Request (ii) contains text such as "Kota Bandung, Jawa Barat, Indonesia" and <strong>is still sent even if you never granted location permission</strong> — it is a place name, not a device position. Without a result from this service the app uses the province capital's centre point stored inside the app.</li>
+</ul>
+<p>The app does not store geocoding results on any server and does not send them to anyone other than as coordinates in the schedule requests to (a)/(b) above. We do not control the policies of those platform service providers; those requests are subject to the privacy policy of your device's operating system.</p>
+<p><strong>d. No one else.</strong> Besides the schedule sources in (a) and (b) and the platform services in (c), there are no data recipients: no advertising network, data broker, or analytics provider receives data from this app.</p>
+<p>Like any web request, the destination servers above may log the IP address and time of the request as part of their operational logs. The app does not send any user identifier, account, or device ID with those requests. All connections use HTTPS; the app rejects plain HTTP (cleartext) traffic.</p>
+      </section>
+      <section class="card">
+        <h2>5. What we do not do</h2>
+<ul>
+<li>No accounts, registration, or user profiles.</li>
+<li>No ads and no data sharing for advertising or marketing.</li>
+<li>No usage analytics, no crash reporting, no Firebase SDK.</li>
+<li>No sale, rental, or exchange of personal data.</li>
+<li>No access to contacts, photos, files, microphone, camera, or background location.</li>
+</ul>
+<p>The app does not request background location. The device position is read only when you tap "Deteksi Lokasi Otomatis" on Home or "Perbarui Lokasi" on the Schedule screen — that is, while the app is open on that screen; once stored, alarms and the qibla direction use that position without reading GPS again.</p>
+      </section>
+      <section class="card">
+        <h2>6. Storage and deletion</h2>
+<p>All data is stored in the app's internal storage on your device (not readable by other apps on a non-rooted device), and is <strong>not</strong> included in Android cloud backup — the app sets <code>android:allowBackup="false"</code>.</p>
+<p>You can delete everything at any time:</p>
+<ul>
+<li>clear the app's data via <strong>Settings → Apps → Prayer Alarm → Storage → Clear data</strong>; or</li>
+<li>uninstall the app.</li>
+</ul>
+<p>After that no copy of the data remains on the device. Because we have no server or user accounts, there is no data on our side to delete.</p>
+      </section>
+      <section class="card">
+        <h2>7. Security</h2>
+<p>All network communication uses HTTPS with system certificates, and the app's network security configuration blocks cleartext traffic. Kemenag session cookies live in memory only while the app is running and are never written to disk.</p>
+      </section>
+      <section class="card">
+        <h2>8. Children</h2>
+<p>This app is a general utility for adult and teenage users; it is <strong>not</strong> directed at children, and it does not collect any personal data from anyone, including children. The app has no ads, purchases, or user-generated content, so there is no path for a child to share information.</p>
+      </section>
+      <section class="card">
+        <h2>9. Your rights</h2>
+<p>Because the app has no accounts and stores no data on our servers, full control stays on your device: you can see what data is stored (schedule, city, settings), delete it (section 6), and refuse or revoke location and notification permissions at any time through Android Settings. Revoking location permission does not delete a saved city; pick another city or clear the app's data to replace it.</p>
+      </section>
+      <section class="card">
+        <h2>10. Changes to this policy</h2>
+<p>If this policy changes, the "Last updated" date above will change and the new version will be published at the same URL. Changes that affect how data is processed will be described in the app's release notes.</p>
+      </section>
+      <section class="card">
+        <h2>11. Contact</h2>
+<p>Questions about this policy or about data in the app:</p>
+<p><strong>support@trazire.com</strong>
+Trazire Gamedev Team</p>
+      </section>
+    </div>
+</main>
+<footer>
+  <div class="rule"></div>
+  Prayer Alarm · <a href="mailto:support@trazire.com">support@trazire.com</a> · trazire.com
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  var id = document.getElementById('policy-id');
+  var en = document.getElementById('policy-en');
+  var buttons = document.querySelectorAll('.lang button[data-lang]');
+  var titles = { id: 'Kebijakan Privasi — Prayer Alarm', en: 'Privacy Policy — Prayer Alarm' };
+  function apply(lang, save) {
+    var use = lang === 'en' ? 'en' : 'id';
+    root.lang = use;
+    if (id) id.hidden = use !== 'id';
+    if (en) en.hidden = use !== 'en';
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-pressed', String(buttons[i].dataset.lang === use));
+    }
+    document.title = titles[use];
+    if (save) {
+      try { localStorage.setItem('prayerapp-policy-lang', use); } catch (e) {}
+    }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('prayerapp-policy-lang'); } catch (e) {}
+  var browser = (navigator.language || 'id').toLowerCase();
+  apply(saved || (browser.indexOf('en') === 0 ? 'en' : 'id'), false);
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function () { apply(this.dataset.lang, true); });
+  }
+})();
+</script>
+</body>
+</html>
