@@ -1,5 +1,3 @@
-# Kebijakan Privasi — Prayer Alarm
-
 **Terakhir diperbarui:** 22 November 2026
 **Aplikasi:** Prayer Alarm (`com.trazire.prayerapp`), versi 1.0
 **Pengembang:** Trazire Gamedev Team
