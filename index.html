@@ -83,7 +83,7 @@ main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
 .group p{margin:0;font-size:.88rem;color:var(--deep)}
 
 .shots{display:flex;gap:16px;overflow-x:auto;padding:4px 4px 16px;scroll-snap-type:x mandatory}
-.shots figure{margin:0;flex:0 0 200px;scroll-snap-align:start}
+.shots figure{margin:0;flex:0 0 clamp(160px,calc((100% - 64px) / 5),200px);scroll-snap-align:start}
 .shots img{width:100%;height:auto;border-radius:20px;border:6px solid var(--ink);
   background:var(--ink);box-shadow:0 10px 24px rgba(6,43,38,.18)}
 .shots figcaption{text-align:center;margin-top:8px;font-size:.8rem;color:var(--deep)}
