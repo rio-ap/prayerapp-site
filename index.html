@@ -18,7 +18,9 @@
 :root{
   --ink:#062B26; --deep:#0E4F45; --teal:#00695C; --teal-light:#14867A;
   --mint:#A5D6A7; --pale:#E8F5E9; --white:#FFFFFF;
-  --gold:#F2C14E; --gold-hi:#FFE9A8; --radius:16px; color-scheme:light;
+  --gold:#F2C14E; --gold-hi:#FFE9A8;
+  --hair:rgba(20,134,122,.24); --divider:rgba(14,79,69,.18);
+  --radius:16px; color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,85 +39,80 @@ a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:2px}
 .top-link{margin-left:auto;color:var(--pale);font-size:.85rem;font-weight:600;
   text-decoration:none;padding:8px 10px;border-radius:8px}
 .top-link:hover{background:rgba(232,245,233,.14)}
-.lang{display:inline-flex;gap:4px;padding:4px;border-radius:999px;
-  background:rgba(232,245,233,.14)}
-.lang button{border:0;background:transparent;color:var(--pale);font:inherit;font-weight:700;
-  font-size:.82rem;padding:7px 14px;border-radius:999px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--gold-hi);color:var(--ink)}
-.lang button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:2px}
 main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
-main.policy{max-width:880px}
-.hero{background:var(--deep);color:var(--pale);border-radius:var(--radius);padding:22px;
-  margin:4px 0 16px;box-shadow:0 2px 10px rgba(6,43,38,.22)}
-.hero h1{margin:0 0 8px;font-size:1.45rem;line-height:1.25}
-.hero .meta{margin:0;font-size:.86rem;color:var(--pale);opacity:.92}
-.hero .meta b,.hero .meta strong{color:var(--gold-hi);font-weight:600}
-.hero .meta code{color:var(--gold-hi);background:transparent}
-.card{background:var(--white);border-radius:var(--radius);padding:20px 22px 6px;
-  margin:14px 0;box-shadow:0 2px 8px rgba(6,43,38,.10)}
-.card h2{margin:0 0 10px;font-size:1.08rem;color:var(--teal);line-height:1.3}
-.card h3{margin:16px 0 6px;font-size:.98rem;color:var(--deep)}
-.card p,.card li{font-size:.94rem}
-.card p{margin:0 0 12px}
-.card ul,.card ol{margin:0 0 12px;padding-left:1.25rem}
-.card li{margin:4px 0}
-.card table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:.88rem;
-  display:block;overflow-x:auto}
-.card th,.card td{padding:8px 10px;border-bottom:1px solid #D7E7DA;text-align:left;vertical-align:top}
-.card th{color:var(--teal);font-weight:600;white-space:nowrap}
-.card tr:last-child td{border-bottom:0}
-.card code{background:var(--pale);border-radius:4px;padding:1px 4px;font-size:.85em}
+
 .hero-landing{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;
   padding:26px 0 8px}
-.eyebrow{display:inline-block;background:var(--white);color:var(--teal);border-radius:999px;
-  padding:6px 14px;font-size:.78rem;font-weight:600;box-shadow:0 2px 8px rgba(6,43,38,.10)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal);
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--gold);border-radius:2px}
 .hero-landing h1{font-size:2.7rem;line-height:1.08;margin:16px 0 12px;letter-spacing:-.6px}
 .lead{font-size:1.05rem;color:var(--deep);max-width:34rem;margin:0}
+.newline{margin:18px 0 0;display:inline-flex;gap:8px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--hair);border-radius:12px;
+  padding:9px 12px;font-size:.86rem;color:var(--deep);box-shadow:0 1px 2px rgba(6,43,38,.06)}
+.newline b{color:var(--teal)}
+.newline .dot{margin-top:.5em;width:8px;height:8px;border-radius:50%;background:var(--gold);
+  flex:0 0 auto;box-shadow:0 0 0 3px rgba(242,193,78,.25)}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
 .btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:600;
   text-decoration:none;font-size:.95rem}
 .btn-primary{background:var(--teal);color:var(--pale)}
-.btn-outline{border:2px solid var(--teal);color:var(--teal);background:transparent}
+.btn-outline{border:1px solid var(--teal);color:var(--teal);background:transparent}
 .btn-disabled{background:#C9DCD0;color:#4F6559;cursor:default}
 .fineprint{margin:14px 0 0;font-size:.8rem;color:var(--deep);opacity:.85}
 .phone{width:min(290px,100%);margin:0 auto;border:10px solid var(--ink);border-radius:40px;
   overflow:hidden;background:var(--ink);box-shadow:0 18px 40px rgba(6,43,38,.28)}
 .phone img{display:block;width:100%;height:auto}
-.section h2{font-size:1.5rem;margin:44px 0 16px;letter-spacing:-.2px}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.feature{background:var(--white);border-radius:var(--radius);padding:20px;
-  box-shadow:0 2px 8px rgba(6,43,38,.10)}
-.feature img{width:36px;height:36px;image-rendering:pixelated}
-.feature h3{margin:10px 0 6px;color:var(--teal);font-size:1rem}
-.feature p{margin:0;font-size:.9rem;color:var(--deep)}
+
+.section{margin-top:52px}
+.overline{margin:0 0 4px;font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--deep);opacity:.8}
+.section h2{font-size:1.5rem;margin:0 0 16px;letter-spacing:-.2px}
+
+.group{background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(6,43,38,.08);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr}
+.group .item{display:flex;gap:14px;padding:20px 22px;align-items:flex-start}
+.group .item:nth-child(odd){border-right:1px solid var(--divider)}
+.group .item:nth-child(-n+2){border-bottom:1px solid var(--divider)}
+.tile{width:40px;height:40px;flex:0 0 auto;border-radius:12px;background:var(--pale);
+  display:flex;align-items:center;justify-content:center}
+.tile img{width:24px;height:24px;image-rendering:pixelated}
+.group h3{margin:0 0 4px;color:var(--teal);font-size:.98rem;line-height:1.3}
+.group p{margin:0;font-size:.88rem;color:var(--deep)}
+
 .shots{display:flex;gap:16px;overflow-x:auto;padding:4px 4px 16px;scroll-snap-type:x mandatory}
-.shots figure{margin:0;flex:0 0 210px;scroll-snap-align:start}
+.shots figure{margin:0;flex:0 0 200px;scroll-snap-align:start}
 .shots img{width:100%;height:auto;border-radius:20px;border:6px solid var(--ink);
   background:var(--ink);box-shadow:0 10px 24px rgba(6,43,38,.18)}
 .shots figcaption{text-align:center;margin-top:8px;font-size:.8rem;color:var(--deep)}
+
 .strip{background:var(--deep);color:var(--pale);border-radius:var(--radius);padding:28px;
-  margin:44px 0;display:flex;gap:24px;align-items:center;justify-content:space-between;
+  margin:52px 0 0;display:flex;gap:24px;align-items:center;justify-content:space-between;
   flex-wrap:wrap}
 .strip h2{color:var(--pale);margin:0 0 8px;font-size:1.3rem}
 .strip p{margin:0;max-width:34rem;color:var(--pale);opacity:.92;font-size:.95rem}
 .strip a{color:var(--gold-hi);font-weight:600;white-space:nowrap}
 .play-card{display:flex;gap:20px;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;padding:26px 24px}
+  flex-wrap:wrap;padding:26px 24px;background:var(--white);border:1px solid var(--hair);
+  border-radius:var(--radius);box-shadow:0 1px 2px rgba(6,43,38,.08);margin-top:14px}
 .play-card h2{margin:0 0 6px;font-size:1.3rem}
 .play-card p{margin:0;color:var(--deep);max-width:36rem;font-size:.95rem}
 footer{max-width:1040px;margin:0 auto;padding:8px 16px 44px;color:var(--deep);font-size:.82rem}
 footer .rule{height:1px;background:#CFE3D2;margin:12px 0 14px}
 footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
-.landing-note{min-height:0}
 @media (max-width:760px){
   .hero-landing{grid-template-columns:1fr;gap:24px}
   .hero-landing h1{font-size:2.05rem}
   .phone{width:235px}
   .app-bar .sub{display:none}
+  .group{grid-template-columns:1fr}
+  .group .item:nth-child(odd){border-right:0}
+  .group .item:not(:last-child){border-bottom:1px solid var(--divider)}
 }
 @media (max-width:520px){
   .hero{padding:18px}
-  .card{padding:18px 16px 4px}
   .lang button{padding:6px 11px}
   .top-link{font-size:.8rem}
 }
@@ -140,46 +137,58 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
       <h1>Shalat tepat waktu, tanpa ribet.</h1>
       <p class="lead">Jadwal dari Kemenag, alarm azan yang tetap berbunyi meski
       aplikasi belum dibuka, dan arah kiblat — dalam satu aplikasi ringan.</p>
+      <p class="newline"><span class="dot"></span><span><b>Baru:</b> ketuk baris shalat untuk
+      menyalakan atau mematikan alarmnya. Lonceng dan jumlah alarm aktif berubah saat itu juga.</span></p>
       <div class="cta-row">
         <span class="btn btn-disabled" aria-disabled="true">Segera di Google Play</span>
         <a class="btn btn-outline" href="privacy-policy/">Kebijakan Privasi</a>
       </div>
       <p class="fineprint">Alarm 3 hari ke depan · Pengingat 5–30 menit · Tanpa akun</p>
     </div>
-    <div class="phone">
-      <img src="assets/screenshots/schedule-light.png" alt="Layar jadwal shalat Prayer Alarm">
-    </div>
+    <figure class="phone" style="margin:0">
+      <img src="assets/screenshots/schedule-light.png" alt="Layar jadwal shalat dengan hitung mundur dan lonceng alarm">
+    </figure>
   </section>
 
   <section class="section" id="fitur">
+    <p class="overline">Fitur</p>
     <h2>Yang kamu dapat</h2>
-    <div class="features">
-      <article class="feature">
-        <img src="assets/icons/ic_pixel_bell.png" alt="">
-        <h3>Alarm yang tidak hilang</h3>
-        <p>Alarm dijadwalkan untuk tiga hari ke depan dan tetap berbunyi meski aplikasi belum dibuka lagi.</p>
+    <div class="group">
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_bell.png" alt=""></span>
+        <div><h3>Alarm sekali ketuk</h3>
+          <p>Alarm terjadwal tiga hari ke depan, dan ketuk baris shalat untuk menyalakan
+          atau mematikannya — lonceng dan hitungan alarm aktif langsung berubah.</p></div>
       </article>
-      <article class="feature">
-        <img src="assets/icons/ic_pixel_pin.png" alt="">
-        <h3>Jadwal dari Kemenag</h3>
-        <p>Sumber utama Bimas Islam Kemenag, dengan Aladhan dan perhitungan di perangkat sebagai cadangan saat server tidak bisa dihubungi.</p>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_pin.png" alt=""></span>
+        <div><h3>Jadwal dari Kemenag</h3>
+          <p>Sumber utama Bimas Islam Kemenag, dengan Aladhan dan perhitungan di perangkat
+          sebagai cadangan saat server tidak bisa dihubungi.</p></div>
       </article>
-      <article class="feature">
-        <img src="assets/icons/ic_pixel_compass.png" alt="">
-        <h3>Kiblat di layar</h3>
-        <p>Kompas menunjuk arah kiblat dari kota yang kamu simpan, lengkap dengan peringatan saat sensor perlu dikalibrasi.</p>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_compass.png" alt=""></span>
+        <div><h3>Kiblat di layar</h3>
+          <p>Kompas menunjuk arah kiblat dari kota yang kamu simpan, lengkap dengan
+          peringatan saat sensor perlu dikalibrasi.</p></div>
       </article>
-      <article class="feature">
-        <img src="assets/icons/ic_pixel_info.png" alt="">
-        <h3>Tanpa iklan, tanpa akun</h3>
-        <p>Tidak ada iklan, analitik, atau pelacakan. Jadwal dan pengaturanmu tersimpan di perangkat sendiri.</p>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_info.png" alt=""></span>
+        <div><h3>Tanpa iklan, tanpa akun</h3>
+          <p>Tidak ada iklan, analitik, atau pelacakan. Jadwal dan pengaturanmu tersimpan
+          di perangkat sendiri.</p></div>
       </article>
     </div>
   </section>
 
   <section class="section" id="tampilan">
+    <p class="overline">Tampilan</p>
     <h2>Tampilan aplikasi</h2>
     <div class="shots">
+      <figure>
+        <img src="assets/screenshots/menu-light.png" alt="Menu utama dengan hitung mundur shalat berikutnya" loading="lazy">
+        <figcaption>Menu</figcaption>
+      </figure>
       <figure>
         <img src="assets/screenshots/schedule-light.png" alt="Layar Jadwal harian aplikasi Prayer Alarm" loading="lazy">
         <figcaption>Jadwal harian</figcaption>
@@ -193,7 +202,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
         <figcaption>Pengaturan alarm</figcaption>
       </figure>
       <figure>
-        <img src="assets/screenshots/schedule-dark.png" alt="Layar Mode gelap aplikasi Prayer Alarm" loading="lazy">
+        <img src="assets/screenshots/schedule-dark.png" alt="Layar mode gelap aplikasi Prayer Alarm" loading="lazy">
         <figcaption>Mode gelap</figcaption>
       </figure>
     </div>
@@ -208,8 +217,8 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
     <a href="privacy-policy/">Baca kebijakan privasi →</a>
   </section>
 
-  <section class="section" id="unduh">
-    <div class="card play-card">
+  <section class="section" id="unduh" style="margin-top:14px">
+    <div class="play-card">
       <div>
         <h2>Siap dipakai</h2>
         <p>Prayer Alarm akan tersedia di Google Play. Sementara itu, kebijakan
