@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mockup — Prayer Alarm · Google Play + QR</title>
+<style>
+:root{
+  --ink:#062B26; --deep:#0E4F45; --teal:#00695C; --teal-light:#14867A;
+  --mint:#A5D6A7; --pale:#E8F5E9; --white:#FFFFFF;
+  --gold:#F2C14E; --gold-hi:#FFE9A8;
+  --hair:rgba(20,134,122,.24); --divider:rgba(14,79,69,.18);
+  --radius:16px; color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--pale);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:2px}
+.app-bar{background:var(--teal);color:var(--pale);position:sticky;top:0;z-index:20;
+  box-shadow:0 2px 10px rgba(6,43,38,.28)}
+.app-bar-inner{max-width:1040px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.app-bar img{width:40px;height:40px;border-radius:10px;image-rendering:pixelated;
+  box-shadow:0 0 0 2px rgba(232,245,233,.18)}
+.app-bar .titles{display:flex;flex-direction:column;line-height:1.2}
+.app-bar .app{font-weight:700;font-size:1.02rem;letter-spacing:.2px}
+.app-bar .sub{font-size:.76rem;color:var(--pale);opacity:.85}
+.top-link{margin-left:auto;color:var(--pale);font-size:.85rem;font-weight:600;
+  text-decoration:none;padding:8px 10px;border-radius:8px}
+.top-link:hover{background:rgba(232,245,233,.14)}
+.top-link + .top-link{margin-left:0}
+main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
+
+.hero-landing{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;
+  padding:26px 0 8px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--teal);
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow::before{content:"";width:18px;height:2px;background:var(--gold);border-radius:2px}
+.hero-landing h1{font-size:2.7rem;line-height:1.08;margin:16px 0 12px;letter-spacing:-.6px}
+.lead{font-size:1.05rem;color:var(--deep);max-width:34rem;margin:0}
+.newline{margin:18px 0 0;display:inline-flex;gap:8px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--hair);border-radius:12px;
+  padding:9px 12px;font-size:.86rem;color:var(--deep);box-shadow:0 1px 2px rgba(6,43,38,.06)}
+.newline b{color:var(--teal)}
+.newline .dot{margin-top:.5em;width:8px;height:8px;border-radius:50%;background:var(--gold);
+  flex:0 0 auto;box-shadow:0 0 0 3px rgba(242,193,78,.25)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:600;
+  text-decoration:none;font-size:.95rem}
+.btn-primary{background:var(--teal);color:var(--pale)}
+.btn-outline{border:1px solid var(--teal);color:var(--teal);background:transparent}
+.fineprint{margin:14px 0 0;font-size:.8rem;color:var(--deep);opacity:.85}
+.phone{width:min(290px,100%);margin:0 auto;border:10px solid var(--ink);border-radius:40px;
+  overflow:hidden;background:var(--ink);box-shadow:0 18px 40px rgba(6,43,38,.28)}
+.phone img{display:block;width:100%;height:auto}
+
+/* ---- play button (Option A, site style) ---- */
+.btn-play{display:inline-flex;align-items:center;gap:12px;background:var(--teal);
+  color:#fff;padding:9px 20px 9px 12px;border-radius:12px;text-decoration:none;
+  box-shadow:0 2px 0 rgba(6,43,38,.22);transition:background .15s ease}
+.btn-play:hover{background:var(--teal-light)}
+.btn-play .glyph{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.btn-play .glyph svg{display:block}
+.btn-play small{display:block;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  opacity:.85;line-height:1.1;font-weight:600}
+.btn-play b{display:block;font-size:1.02rem;line-height:1.15;letter-spacing:.1px}
+
+/* ---- mini QR next to hero CTA ---- */
+.qr-mini{display:flex;align-items:center;gap:11px;background:var(--white);
+  border:1px solid var(--hair);border-radius:12px;padding:7px 13px 7px 7px;
+  text-decoration:none;color:var(--deep);box-shadow:0 1px 2px rgba(6,43,38,.06)}
+.qr-mini .code{width:78px;height:78px;flex:0 0 auto;background:#fff;border-radius:6px}
+.qr-mini .code svg{width:100%;height:100%;display:block}
+.qr-mini b{display:block;font-size:.78rem;color:var(--ink);line-height:1.25}
+.qr-mini span{display:block;font-size:.68rem;line-height:1.35;opacity:.85}
+
+.section{margin-top:52px}
+.overline{margin:0 0 4px;font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--deep);opacity:.8}
+.section h2{font-size:1.5rem;margin:0 0 16px;letter-spacing:-.2px}
+
+.group{background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);
+  box-shadow:0 1px 2px rgba(6,43,38,.08);overflow:hidden;
+  display:grid;grid-template-columns:1fr 1fr}
+.group .item{display:flex;gap:14px;padding:20px 22px;align-items:flex-start}
+.group .item:nth-child(odd){border-right:1px solid var(--divider)}
+.group .item:nth-child(-n+2){border-bottom:1px solid var(--divider)}
+.tile{width:40px;height:40px;flex:0 0 auto;border-radius:12px;background:var(--pale);
+  display:flex;align-items:center;justify-content:center}
+.tile img{width:24px;height:24px;image-rendering:pixelated}
+.group h3{margin:0 0 4px;color:var(--teal);font-size:.98rem;line-height:1.3}
+.group p{margin:0;font-size:.88rem;color:var(--deep)}
+
+.shots{display:flex;gap:16px;overflow-x:auto;padding:4px 4px 16px;scroll-snap-type:x mandatory}
+.shots figure{margin:0;flex:0 0 clamp(160px,calc((100% - 64px) / 5),200px);scroll-snap-align:start}
+.shots img{width:100%;height:auto;border-radius:20px;border:6px solid var(--ink);
+  background:var(--ink);box-shadow:0 10px 24px rgba(6,43,38,.18)}
+.shots figcaption{text-align:center;margin-top:8px;font-size:.8rem;color:var(--deep)}
+
+.strip{background:var(--deep);color:var(--pale);border-radius:var(--radius);padding:28px;
+  margin:52px 0 0;display:flex;gap:24px;align-items:center;justify-content:space-between;
+  flex-wrap:wrap}
+.strip h2{color:var(--pale);margin:0 0 8px;font-size:1.3rem}
+.strip p{margin:0;max-width:34rem;color:var(--pale);opacity:.92;font-size:.95rem}
+.strip a{color:var(--gold-hi);font-weight:600;white-space:nowrap}
+
+/* ---- download card ---- */
+.play-card{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
+  padding:28px;background:var(--white);border:1px solid var(--hair);
+  border-radius:var(--radius);box-shadow:0 1px 2px rgba(6,43,38,.08);margin-top:14px}
+.play-card h2{margin:0 0 8px;font-size:1.45rem}
+.play-card p{margin:0;color:var(--deep);max-width:34rem;font-size:.95rem}
+.play-card .cta-row{margin-top:20px}
+.play-card .fineprint{margin-top:12px}
+.qr-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;
+  background:var(--pale);border:1px solid var(--hair);border-radius:14px;padding:20px 18px}
+.qr-card .code{width:158px;height:158px;background:#fff;border-radius:10px;padding:4px;
+  box-shadow:0 0 0 1px rgba(6,43,38,.06)}
+.qr-card .code svg{width:100%;height:100%;display:block}
+.qr-card b{display:block;font-size:.95rem;line-height:1.3}
+.qr-card span{display:block;font-size:.78rem;color:var(--deep);opacity:.85;line-height:1.4;
+  max-width:15rem;margin:2px auto 0}
+.qr-card .store-url{font-size:.7rem;letter-spacing:.02em;color:var(--teal);font-weight:600}
+
+footer{max-width:1040px;margin:0 auto;padding:8px 16px 44px;color:var(--deep);font-size:.82rem}
+footer .rule{height:1px;background:#CFE3D2;margin:12px 0 14px}
+footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+
+/* ---- mockup-only chrome ---- */
+.mock-banner{background:var(--gold);color:#3D2E00;font-size:.78rem;font-weight:600;
+  text-align:center;padding:7px 14px;letter-spacing:.02em}
+.mock-banner b{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.7rem;
+  border:1px solid rgba(61,46,0,.4);border-radius:4px;padding:1px 5px;margin-right:6px}
+.mock-notes{max-width:1040px;margin:8px auto 0;padding:0 16px}
+.mock-notes .box{background:var(--white);border:1px dashed var(--teal);border-radius:var(--radius);
+  padding:22px 24px;margin-top:40px}
+.mock-notes h2{font-size:1.1rem;margin:0 0 4px}
+.mock-notes p{margin:0 0 12px;font-size:.86rem;color:var(--deep)}
+.mock-notes ul{margin:0;padding-left:20px;font-size:.86rem;color:var(--deep)}
+.mock-notes li{margin:4px 0}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+.opt{border:1px solid var(--divider);border-radius:12px;padding:18px;background:#FAFFFB}
+.opt h3{margin:0 0 10px;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--deep);opacity:.8}
+.opt .note{font-size:.76rem;color:var(--deep);opacity:.8;margin:10px 0 0}
+.badge-play{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;
+  border:1px solid #000;border-radius:8px;padding:8px 14px 8px 11px;text-decoration:none}
+.badge-play svg{width:26px;height:26px;display:block}
+.badge-play small{display:block;font-size:.55rem;letter-spacing:.06em;line-height:1.1;
+  opacity:.85;text-transform:uppercase}
+.badge-play b{display:block;font-size:1.02rem;line-height:1.15;letter-spacing:.2px}
+
+@media (max-width:760px){
+  .hero-landing{grid-template-columns:1fr;gap:24px}
+  .hero-landing h1{font-size:2.05rem}
+  .phone{width:235px}
+  .app-bar .sub{display:none}
+  .group{grid-template-columns:1fr}
+  .group .item:nth-child(odd){border-right:0}
+  .group .item:not(:last-child){border-bottom:1px solid var(--divider)}
+  .qr-mini{display:none}
+  .play-card{grid-template-columns:1fr;padding:22px}
+  .qr-card{flex-direction:row;text-align:left;gap:16px;padding:16px}
+  .qr-card .code{width:112px;height:112px}
+  .qr-card b{font-size:.9rem}
+  .opt-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .top-link{font-size:.8rem}
+  .top-link.privacy{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="mock-banner"><b>Mockup</b>Pratinjau perubahan — belum diterapkan ke situs. QR sudah berisi tautan Play Store yang asli, jadi bisa langsung dipindai.</div>
+
+<header class="app-bar">
+  <div class="app-bar-inner">
+    <img src="assets/icon.png" alt="">
+    <div class="titles">
+      <span class="app">Prayer Alarm</span>
+      <span class="sub">Jadwal shalat · Azan · Kiblat</span>
+    </div>
+    <a class="top-link" href="#unduh">Unduh</a>
+    <a class="top-link privacy" href="privacy-policy/">Kebijakan Privasi</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero-landing">
+    <div>
+      <span class="eyebrow">Baru di Google Play · Android 8.0+</span>
+      <h1>Shalat tepat waktu, tanpa ribet.</h1>
+      <p class="lead">Jadwal dari Kemenag, alarm azan yang tetap berbunyi meski
+      aplikasi belum dibuka, dan arah kiblat — dalam satu aplikasi ringan.</p>
+      <p class="newline"><span class="dot"></span><span><b>Baru:</b> pengingat kini satu
+      sakelar — matikan tanpa mengubah alarm azan. Layar kiblat juga lebih rapi.</span></p>
+      <div class="cta-row">
+        <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+          <span class="glyph" aria-hidden="true">
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1.5 1.6v16.8c0 .6.55 1 .98.6l13.6-8.4a.7.7 0 0 0 0-1.2L2.48 1C2.05.6 1.5 1 1.5 1.6Z" fill="#fff"/></svg>
+          </span>
+          <span><small>Dapatkan di</small><b>Google Play</b></span>
+        </a>
+        <a class="qr-mini" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp" title="Pindai QR ini dengan kamera ponsel">
+          <span class="code" aria-hidden="true"><svg width="376" height="376" class="segno"><g transform="scale(8)"><path fill="#fff" d="M0 0h47v47h-47z"/><path class="qrline" stroke="#062b26" d="M3 3.5h7m3 0h1m2 0h4m1 0h1m4 0h3m1 0h2m1 0h1m3 0h7m-41 1h1m5 0h1m2 0h3m1 0h7m3 0h1m1 0h2m3 0h2m2 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m2 0h3m3 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h4m1 0h2m5 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2m5 0h2m2 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-31 1h2m3 0h1m2 0h1m1 0h2m1 0h2m1 0h4m1 0h2m-32 1h1m2 0h1m1 0h1m1 0h1m1 0h2m1 0h3m1 0h3m2 0h2m5 0h1m3 0h1m1 0h2m1 0h1m-39 1h1m4 0h1m2 0h4m1 0h1m1 0h1m1 0h2m1 0h9m1 0h1m2 0h2m1 0h2m2 0h1m-41 1h1m2 0h1m2 0h2m3 0h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h2m3 0h3m1 0h1m2 0h2m-41 1h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m6 0h1m1 0h2m1 0h2m1 0h1m2 0h1m-41 1h2m2 0h3m1 0h1m1 0h2m3 0h2m6 0h1m3 0h1m1 0h1m2 0h2m5 0h1m-39 1h1m1 0h3m3 0h1m1 0h1m1 0h2m3 0h2m1 0h1m2 0h2m2 0h1m1 0h1m2 0h2m1 0h1m3 0h1m-41 1h3m2 0h8m1 0h1m2 0h4m1 0h4m2 0h1m4 0h2m3 0h1m1 0h1m-41 1h3m1 0h1m2 0h1m3 0h2m1 0h1m1 0h2m3 0h1m1 0h1m5 0h3m4 0h2m1 0h2m-39 1h1m2 0h2m1 0h2m2 0h1m3 0h1m1 0h2m2 0h1m4 0h3m1 0h1m3 0h1m1 0h1m1 0h1m-39 1h1m2 0h1m3 0h1m1 0h2m2 0h3m6 0h1m2 0h3m1 0h1m1 0h7m1 0h1m-41 1h1m1 0h5m1 0h4m2 0h1m1 0h1m1 0h2m1 0h9m5 0h1m1 0h1m1 0h2m-40 1h2m1 0h1m2 0h1m1 0h4m1 0h2m4 0h2m1 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-39 1h2m2 0h4m1 0h2m2 0h1m1 0h3m3 0h3m1 0h3m1 0h3m3 0h1m1 0h1m-39 1h2m1 0h2m1 0h1m2 0h7m2 0h1m2 0h2m2 0h4m3 0h4m3 0h1m-40 1h1m3 0h4m1 0h5m3 0h2m1 0h1m1 0h1m1 0h3m1 0h2m4 0h2m1 0h1m1 0h1m-40 1h4m3 0h1m3 0h2m1 0h1m3 0h2m2 0h2m1 0h4m2 0h1m2 0h1m1 0h1m-37 1h2m3 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1m4 0h1m1 0h3m1 0h1m-35 1h2m7 0h6m1 0h2m2 0h3m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1m1 0h1m-38 1h1m1 0h3m2 0h1m1 0h2m2 0h2m3 0h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m4 0h1m-40 1h3m1 0h1m2 0h2m3 0h1m2 0h2m1 0h2m1 0h1m1 0h1m1 0h7m1 0h1m1 0h2m1 0h1m-40 1h1m1 0h1m3 0h1m3 0h4m1 0h1m8 0h1m1 0h2m1 0h2m2 0h1m-34 1h3m2 0h1m4 0h1m2 0h2m1 0h1m1 0h1m1 0h2m3 0h2m2 0h2m3 0h7m-37 1h1m1 0h3m2 0h4m4 0h3m5 0h2m1 0h1m1 0h2m2 0h3m1 0h1m-39 1h2m3 0h3m4 0h2m2 0h3m3 0h1m1 0h5m1 0h2m2 0h2m2 0h1m-41 1h2m1 0h1m2 0h2m1 0h6m2 0h1m1 0h1m1 0h4m4 0h1m1 0h7m1 0h1m-32 1h3m1 0h1m1 0h1m2 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h3m3 0h2m2 0h1m-41 1h7m3 0h1m1 0h3m2 0h1m2 0h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m-41 1h1m5 0h1m2 0h3m4 0h4m1 0h1m4 0h2m1 0h1m1 0h2m3 0h2m1 0h2m-41 1h1m1 0h3m1 0h1m1 0h1m4 0h2m1 0h2m2 0h1m1 0h6m2 0h8m1 0h2m-41 1h1m1 0h3m1 0h1m2 0h8m2 0h1m1 0h3m3 0h2m1 0h1m1 0h1m2 0h1m1 0h2m-39 1h1m1 0h3m1 0h1m2 0h1m2 0h2m1 0h1m3 0h1m2 0h6m1 0h1m2 0h2m6 0h1m-41 1h1m5 0h1m1 0h1m2 0h1m1 0h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h7m1 0h1m1 0h2m-41 1h7m7 0h1m1 0h1m1 0h3m1 0h3m2 0h3m2 0h5m2 0h1"/></g></svg></span>
+          <span><b>Pindai untuk memasang</b><span>Buka kamera ponsel, arahkan ke kode.</span></span>
+        </a>
+      </div>
+      <p class="fineprint">Gratis · Tanpa iklan · Tanpa akun · Alarm 3 hari ke depan</p>
+    </div>
+    <figure class="phone" style="margin:0">
+      <img src="assets/screenshots/schedule-light.png" alt="Layar jadwal shalat dengan hitung mundur dan lonceng alarm">
+    </figure>
+  </section>
+
+  <section class="section" id="fitur">
+    <p class="overline">Fitur</p>
+    <h2>Yang kamu dapat</h2>
+    <div class="group">
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_bell.png" alt=""></span>
+        <div><h3>Alarm sekali ketuk</h3>
+          <p>Alarm terjadwal tiga hari ke depan, dan ketuk baris shalat untuk menyalakan
+          atau mematikannya — lonceng dan hitungan alarm aktif langsung berubah.</p></div>
+      </article>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_pin.png" alt=""></span>
+        <div><h3>Jadwal dari Kemenag</h3>
+          <p>Sumber utama Bimas Islam Kemenag, dengan Aladhan dan perhitungan di perangkat
+          sebagai cadangan saat server tidak bisa dihubungi.</p></div>
+      </article>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_compass.png" alt=""></span>
+        <div><h3>Kiblat di layar</h3>
+          <p>Kompas menunjuk arah kiblat dari kota yang kamu simpan, lengkap dengan
+          peringatan saat sensor perlu dikalibrasi.</p></div>
+      </article>
+      <article class="item">
+        <span class="tile"><img src="assets/icons/ic_pixel_info.png" alt=""></span>
+        <div><h3>Tanpa iklan, tanpa akun</h3>
+          <p>Tidak ada iklan, analitik, atau pelacakan. Jadwal dan pengaturanmu tersimpan
+          di perangkat sendiri.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="tampilan">
+    <p class="overline">Tampilan</p>
+    <h2>Tampilan aplikasi</h2>
+    <div class="shots">
+      <figure>
+        <img src="assets/screenshots/menu-light.png" alt="Menu utama dengan hitung mundur shalat berikutnya" loading="lazy">
+        <figcaption>Menu</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/schedule-light.png" alt="Layar Jadwal harian aplikasi Prayer Alarm" loading="lazy">
+        <figcaption>Jadwal harian</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/qibla-light.png" alt="Layar Arah kiblat aplikasi Prayer Alarm" loading="lazy">
+        <figcaption>Arah kiblat</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/settings-light.png" alt="Layar Pengaturan alarm aplikasi Prayer Alarm" loading="lazy">
+        <figcaption>Pengaturan alarm</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/screenshots/schedule-dark.png" alt="Layar mode gelap aplikasi Prayer Alarm" loading="lazy">
+        <figcaption>Mode gelap</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div>
+      <h2>Data tetap di perangkatmu.</h2>
+      <p>Tanpa akun, tanpa iklan, tanpa analitik. Lokasi hanya dibaca saat kamu
+      meminta deteksi, dan jadwal tersimpan agar aplikasi tetap bekerja tanpa internet.</p>
+    </div>
+    <a href="privacy-policy/">Baca kebijakan privasi →</a>
+  </section>
+
+  <section class="section" id="unduh" style="margin-top:14px">
+    <div class="play-card">
+      <div>
+        <p class="overline">Unduh</p>
+        <h2>Sudah tersedia di Google Play.</h2>
+        <p>Jadwal shalat, alarm azan, dan arah kiblat dalam satu aplikasi ringan.
+        Gratis, tanpa iklan, tanpa akun — langsung dari Google Play.</p>
+        <div class="cta-row">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+            <span class="glyph" aria-hidden="true">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1.5 1.6v16.8c0 .6.55 1 .98.6l13.6-8.4a.7.7 0 0 0 0-1.2L2.48 1C2.05.6 1.5 1 1.5 1.6Z" fill="#fff"/></svg>
+            </span>
+            <span><small>Dapatkan di</small><b>Google Play</b></span>
+          </a>
+        </div>
+        <p class="fineprint">Android 8.0+ · Bahasa Indonesia &amp; Inggris · Tanpa akun</p>
+      </div>
+      <aside class="qr-card" aria-label="Kode QR menuju Google Play">
+        <span class="code"><svg width="376" height="376" class="segno"><g transform="scale(8)"><path fill="#fff" d="M0 0h47v47h-47z"/><path class="qrline" stroke="#062b26" d="M3 3.5h7m3 0h1m2 0h4m1 0h1m4 0h3m1 0h2m1 0h1m3 0h7m-41 1h1m5 0h1m2 0h3m1 0h7m3 0h1m1 0h2m3 0h2m2 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m2 0h3m3 0h1m2 0h1m2 0h3m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h5m1 0h1m1 0h3m1 0h4m1 0h2m5 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h1m1 0h1m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2m5 0h2m2 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-31 1h2m3 0h1m2 0h1m1 0h2m1 0h2m1 0h4m1 0h2m-32 1h1m2 0h1m1 0h1m1 0h1m1 0h2m1 0h3m1 0h3m2 0h2m5 0h1m3 0h1m1 0h2m1 0h1m-39 1h1m4 0h1m2 0h4m1 0h1m1 0h1m1 0h2m1 0h9m1 0h1m2 0h2m1 0h2m2 0h1m-41 1h1m2 0h1m2 0h2m3 0h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h2m3 0h3m1 0h1m2 0h2m-41 1h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m6 0h1m1 0h2m1 0h2m1 0h1m2 0h1m-41 1h2m2 0h3m1 0h1m1 0h2m3 0h2m6 0h1m3 0h1m1 0h1m2 0h2m5 0h1m-39 1h1m1 0h3m3 0h1m1 0h1m1 0h2m3 0h2m1 0h1m2 0h2m2 0h1m1 0h1m2 0h2m1 0h1m3 0h1m-41 1h3m2 0h8m1 0h1m2 0h4m1 0h4m2 0h1m4 0h2m3 0h1m1 0h1m-41 1h3m1 0h1m2 0h1m3 0h2m1 0h1m1 0h2m3 0h1m1 0h1m5 0h3m4 0h2m1 0h2m-39 1h1m2 0h2m1 0h2m2 0h1m3 0h1m1 0h2m2 0h1m4 0h3m1 0h1m3 0h1m1 0h1m1 0h1m-39 1h1m2 0h1m3 0h1m1 0h2m2 0h3m6 0h1m2 0h3m1 0h1m1 0h7m1 0h1m-41 1h1m1 0h5m1 0h4m2 0h1m1 0h1m1 0h2m1 0h9m5 0h1m1 0h1m1 0h2m-40 1h2m1 0h1m2 0h1m1 0h4m1 0h2m4 0h2m1 0h1m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-39 1h2m2 0h4m1 0h2m2 0h1m1 0h3m3 0h3m1 0h3m1 0h3m3 0h1m1 0h1m-39 1h2m1 0h2m1 0h1m2 0h7m2 0h1m2 0h2m2 0h4m3 0h4m3 0h1m-40 1h1m3 0h4m1 0h5m3 0h2m1 0h1m1 0h1m1 0h3m1 0h2m4 0h2m1 0h1m1 0h1m-40 1h4m3 0h1m3 0h2m1 0h1m3 0h2m2 0h2m1 0h4m2 0h1m2 0h1m1 0h1m-37 1h2m3 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h1m4 0h1m1 0h3m1 0h1m-35 1h2m7 0h6m1 0h2m2 0h3m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1m1 0h1m-38 1h1m1 0h3m2 0h1m1 0h2m2 0h2m3 0h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h1m4 0h1m-40 1h3m1 0h1m2 0h2m3 0h1m2 0h2m1 0h2m1 0h1m1 0h1m1 0h7m1 0h1m1 0h2m1 0h1m-40 1h1m1 0h1m3 0h1m3 0h4m1 0h1m8 0h1m1 0h2m1 0h2m2 0h1m-34 1h3m2 0h1m4 0h1m2 0h2m1 0h1m1 0h1m1 0h2m3 0h2m2 0h2m3 0h7m-37 1h1m1 0h3m2 0h4m4 0h3m5 0h2m1 0h1m1 0h2m2 0h3m1 0h1m-39 1h2m3 0h3m4 0h2m2 0h3m3 0h1m1 0h5m1 0h2m2 0h2m2 0h1m-41 1h2m1 0h1m2 0h2m1 0h6m2 0h1m1 0h1m1 0h4m4 0h1m1 0h7m1 0h1m-32 1h3m1 0h1m1 0h1m2 0h1m1 0h2m1 0h2m1 0h1m1 0h1m2 0h3m3 0h2m2 0h1m-41 1h7m3 0h1m1 0h3m2 0h1m2 0h1m2 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m-41 1h1m5 0h1m2 0h3m4 0h4m1 0h1m4 0h2m1 0h1m1 0h2m3 0h2m1 0h2m-41 1h1m1 0h3m1 0h1m1 0h1m4 0h2m1 0h2m2 0h1m1 0h6m2 0h8m1 0h2m-41 1h1m1 0h3m1 0h1m2 0h8m2 0h1m1 0h3m3 0h2m1 0h1m1 0h1m2 0h1m1 0h2m-39 1h1m1 0h3m1 0h1m2 0h1m2 0h2m1 0h1m3 0h1m2 0h6m1 0h1m2 0h2m6 0h1m-41 1h1m5 0h1m1 0h1m2 0h1m1 0h1m4 0h1m2 0h2m1 0h1m1 0h1m2 0h7m1 0h1m1 0h2m-41 1h7m7 0h1m1 0h1m1 0h3m1 0h3m2 0h3m2 0h5m2 0h1"/></g></svg></span>
+        <div>
+          <b>Pindai untuk memasang</b>
+          <span>Arahkan kamera ponsel ke kode ini — langsung membuka Google Play.</span>
+          <span class="store-url">play.google.com/store/apps/details?id=com.trazire.prayerapp</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="rule"></div>
+  <div class="links">
+    <a href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">Google Play</a>
+    <a href="privacy-policy/">Kebijakan Privasi</a>
+    <a href="mailto:support@trazire.com">support@trazire.com</a>
+  </div>
+  Prayer Alarm oleh Trazire Gamedev Team · © 2026
+</footer>
+
+<div class="mock-notes">
+  <div class="box">
+    <h2>Yang berubah</h2>
+    <p>Semua isi lain (fitur, screenshot, warna, tata letak) tetap sama.</p>
+    <ul>
+      <li>Tombol “Segera di Google Play” diganti tombol aktif ke Play Store, di hero dan seksi unduh.</li>
+      <li>QR code asli (bukan layanan pihak ketiga) di hero untuk desktop dan panel besar di seksi unduh.</li>
+      <li>Catatan “Baru” disamakan dengan What’s New di Play Store.</li>
+      <li>Tautan “Unduh” di header dan “Google Play” di footer.</li>
+    </ul>
+    <div class="opt-grid">
+      <div class="opt">
+        <h3>Opsi tombol A — gaya situs (dipakai di atas)</h3>
+        <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+          <span class="glyph" aria-hidden="true">
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1.5 1.6v16.8c0 .6.55 1 .98.6l13.6-8.4a.7.7 0 0 0 0-1.2L2.48 1C2.05.6 1.5 1 1.5 1.6Z" fill="#fff"/></svg>
+          </span>
+          <span><small>Dapatkan di</small><b>Google Play</b></span>
+        </a>
+        <p class="note">Menyatu dengan palet teal situs. Paling rapi secara visual.</p>
+      </div>
+      <div class="opt">
+        <h3>Opsi tombol B — badge resmi</h3>
+        <a class="badge-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#00D2FF" d="M3 2.2v19.6c0 .5.55.8.95.53l10.7-6.6-3.1-3.3L3 2.2Z"/>
+            <path fill="#00E676" d="M14.65 15.73 11.55 12.4 3.95 3.13l.1-.1c.3-.3.8-.36 1.2-.12l12.3 7.6-2.9 5.22Z"/>
+            <path fill="#FFD400" d="M14.65 15.73 17.55 10.5l3.05 1.9c.6.35.6 1.2 0 1.55l-2.6 1.6-3.35.18Z"/>
+            <path fill="#FF3D00" d="m14.65 15.73 3.3-.18-3.3 5.85c-.4.24-1 .18-1.3-.12l-.05-.05 1.35-5.5Z"/>
+          </svg>
+          <span><small>Get it on</small><b>Google Play</b></span>
+        </a>
+        <p class="note">Sesuai pedoman merek Google Play, tapi kontrasnya lebih keras di latar hijau muda.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px">Catatan: Play Store belum punya rating/jumlah ulasan, jadi tidak ada bintang atau angka unduhan di halaman — lebih jujur daripada menampilkan angka kosong.</p>
+  </div>
+</div>
+
+</body>
+</html>
