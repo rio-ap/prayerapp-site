@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Prayer Alarm — Jadwal Shalat, Alarm Azan, Kiblat</title>
-<meta name="description" content="Jadwal shalat dari Kemenag, alarm azan yang tetap berbunyi meski aplikasi belum dibuka, dan arah kiblat. Gratis, tanpa iklan, tanpa akun.">
+<title>Prayer Alarm: Jadwal Shalat, Alarm Azan, Kiblat</title>
+<meta name="description" content="Jadwal shalat dari Kemenag, alarm azan yang tetap bunyi walau aplikasi belum dibuka, dan kompas penentu arah kiblat. Satu aplikasi ringan tanpa iklan.">
 <meta name="theme-color" content="#00695C">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Prayer Alarm — Jadwal Shalat, Alarm Azan, Kiblat">
-<meta property="og:description" content="Jadwal shalat dari Kemenag, alarm azan yang tetap berbunyi meski aplikasi belum dibuka, dan arah kiblat. Gratis, tanpa iklan, tanpa akun.">
+<meta property="og:title" content="Prayer Alarm: Jadwal Shalat, Alarm Azan, Kiblat">
+<meta property="og:description" content="Jadwal shalat dari Kemenag, alarm azan yang tetap bunyi walau aplikasi belum dibuka, dan kompas penentu arah kiblat. Satu aplikasi ringan tanpa iklan.">
 <meta property="og:image" content="https://prayerapp.trazire.com/assets/feature-1024x500.png">
 <meta property="og:url" content="https://prayerapp.trazire.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -39,6 +39,7 @@ a{color:var(--teal);text-decoration-thickness:1px;text-underline-offset:2px}
 .top-link{margin-left:auto;color:var(--pale);font-size:.85rem;font-weight:600;
   text-decoration:none;padding:8px 10px;border-radius:8px}
 .top-link:hover{background:rgba(232,245,233,.14)}
+.top-link + .top-link{margin-left:0}
 main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
 
 .hero-landing{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;
@@ -48,22 +49,29 @@ main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
 .eyebrow::before{content:"";width:18px;height:2px;background:var(--gold);border-radius:2px}
 .hero-landing h1{font-size:2.7rem;line-height:1.08;margin:16px 0 12px;letter-spacing:-.6px}
 .lead{font-size:1.05rem;color:var(--deep);max-width:34rem;margin:0}
-.newline{margin:18px 0 0;display:inline-flex;gap:8px;align-items:flex-start;
-  background:var(--white);border:1px solid var(--hair);border-radius:12px;
-  padding:9px 12px;font-size:.86rem;color:var(--deep);box-shadow:0 1px 2px rgba(6,43,38,.06)}
-.newline b{color:var(--teal)}
-.newline .dot{margin-top:.5em;width:8px;height:8px;border-radius:50%;background:var(--gold);
-  flex:0 0 auto;box-shadow:0 0 0 3px rgba(242,193,78,.25)}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
-.btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:600;
-  text-decoration:none;font-size:.95rem}
-.btn-primary{background:var(--teal);color:var(--pale)}
-.btn-outline{border:1px solid var(--teal);color:var(--teal);background:transparent}
-.btn-disabled{background:#C9DCD0;color:#4F6559;cursor:default}
 .fineprint{margin:14px 0 0;font-size:.8rem;color:var(--deep);opacity:.85}
 .phone{width:min(290px,100%);margin:0 auto;border:10px solid var(--ink);border-radius:40px;
   overflow:hidden;background:var(--ink);box-shadow:0 18px 40px rgba(6,43,38,.28)}
 .phone img{display:block;width:100%;height:auto}
+
+.btn-play{display:inline-flex;align-items:center;gap:12px;background:var(--teal);
+  color:#fff;padding:9px 20px 9px 12px;border-radius:12px;text-decoration:none;
+  box-shadow:0 2px 0 rgba(6,43,38,.22);transition:background .15s ease}
+.btn-play:hover{background:var(--teal-light)}
+.btn-play .glyph{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.btn-play .glyph svg{display:block}
+.btn-play small{display:block;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  opacity:.85;line-height:1.1;font-weight:600}
+.btn-play b{display:block;font-size:1.02rem;line-height:1.15;letter-spacing:.1px}
+
+.qr-mini{display:flex;align-items:center;gap:11px;background:var(--white);
+  border:1px solid var(--hair);border-radius:12px;padding:7px 13px 7px 7px;
+  text-decoration:none;color:var(--deep);box-shadow:0 1px 2px rgba(6,43,38,.06)}
+.qr-mini .code{width:96px;height:96px;flex:0 0 auto;background:#fff;border-radius:6px;display:block}
+.qr-mini b{display:block;font-size:.78rem;color:var(--ink);line-height:1.25}
+.qr-mini span{display:block;font-size:.68rem;line-height:1.35;opacity:.85}
 
 .section{margin-top:52px}
 .overline{margin:0 0 4px;font-size:.72rem;font-weight:700;letter-spacing:.14em;
@@ -94,11 +102,22 @@ main{max-width:1040px;margin:0 auto;padding:16px 16px 40px}
 .strip h2{color:var(--pale);margin:0 0 8px;font-size:1.3rem}
 .strip p{margin:0;max-width:34rem;color:var(--pale);opacity:.92;font-size:.95rem}
 .strip a{color:var(--gold-hi);font-weight:600;white-space:nowrap}
-.play-card{display:flex;gap:20px;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;padding:26px 24px;background:var(--white);border:1px solid var(--hair);
+
+.play-card{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
+  padding:28px;background:var(--white);border:1px solid var(--hair);
   border-radius:var(--radius);box-shadow:0 1px 2px rgba(6,43,38,.08);margin-top:14px}
-.play-card h2{margin:0 0 6px;font-size:1.3rem}
-.play-card p{margin:0;color:var(--deep);max-width:36rem;font-size:.95rem}
+.play-card h2{margin:0 0 8px;font-size:1.45rem}
+.play-card p{margin:0;color:var(--deep);max-width:34rem;font-size:.95rem}
+.play-card .cta-row{margin-top:20px}
+.play-card .fineprint{margin-top:12px}
+.qr-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;
+  background:var(--pale);border:1px solid var(--hair);border-radius:14px;padding:20px 18px}
+.qr-card .code{width:158px;height:158px;background:#fff;border-radius:10px;padding:4px;
+  box-shadow:0 0 0 1px rgba(6,43,38,.06);display:block}
+.qr-card b{display:block;font-size:.95rem;line-height:1.3}
+.qr-card span{display:block;font-size:.78rem;color:var(--deep);opacity:.85;line-height:1.4;
+  max-width:15rem;margin:2px auto 0}
+
 footer{max-width:1040px;margin:0 auto;padding:8px 16px 44px;color:var(--deep);font-size:.82rem}
 footer .rule{height:1px;background:#CFE3D2;margin:12px 0 14px}
 footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
@@ -110,11 +129,17 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
   .group{grid-template-columns:1fr}
   .group .item:nth-child(odd){border-right:0}
   .group .item:not(:last-child){border-bottom:1px solid var(--divider)}
+  .qr-mini{display:none}
+  .play-card{grid-template-columns:1fr;padding:22px}
+  .qr-card{flex-direction:row;text-align:left;gap:16px;padding:16px}
+  .qr-card .code{width:112px;height:112px}
+  .qr-card b{font-size:.9rem}
 }
 @media (max-width:520px){
-  .hero{padding:18px}
-  .lang button{padding:6px 11px}
   .top-link{font-size:.8rem}
+  .top-link.privacy{display:none}
+  .qr-card{flex-direction:column;text-align:center;gap:10px;padding:18px}
+  .qr-card span{max-width:17rem}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -127,23 +152,30 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
       <span class="app">Prayer Alarm</span>
       <span class="sub">Jadwal shalat · Azan · Kiblat</span>
     </div>
-    <a class="top-link" href="privacy-policy/">Kebijakan Privasi</a>
+    <a class="top-link" href="#unduh">Unduh</a>
+    <a class="top-link privacy" href="privacy-policy/">Kebijakan Privasi</a>
   </div>
 </header>
 <main>
   <section class="hero-landing">
     <div>
-      <span class="eyebrow">Gratis · Tanpa iklan · Android 8.0+</span>
+      <span class="eyebrow">Baru di Google Play</span>
       <h1>Shalat tepat waktu, tanpa ribet.</h1>
-      <p class="lead">Jadwal dari Kemenag, alarm azan yang tetap berbunyi meski
-      aplikasi belum dibuka, dan arah kiblat — dalam satu aplikasi ringan.</p>
-      <p class="newline"><span class="dot"></span><span><b>Baru:</b> ketuk baris shalat untuk
-      menyalakan atau mematikan alarmnya. Lonceng dan jumlah alarm aktif berubah saat itu juga.</span></p>
+      <p class="lead">Jadwal shalat dari Kemenag, alarm azan yang tetap bunyi walau
+      aplikasi belum dibuka, dan kompas penentu arah kiblat. Semuanya ada di satu aplikasi
+      ringan tanpa iklan.</p>
       <div class="cta-row">
-        <span class="btn btn-disabled" aria-disabled="true">Segera di Google Play</span>
-        <a class="btn btn-outline" href="privacy-policy/">Kebijakan Privasi</a>
+        <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+          <span class="glyph" aria-hidden="true">
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1.5 1.6v16.8c0 .6.55 1 .98.6l13.6-8.4a.7.7 0 0 0 0-1.2L2.48 1C2.05.6 1.5 1 1.5 1.6Z" fill="#fff"/></svg>
+          </span>
+          <span><small>Dapatkan di</small><b>Google Play</b></span>
+        </a>
+        <a class="qr-mini" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp" title="Pindai QR ini dengan kamera ponsel">
+          <img class="code" src="assets/qr-playstore.svg" alt="Kode QR menuju Google Play">
+          <span><b>Pindai untuk memasang</b><span>Buka kamera ponsel, arahkan ke kode.</span></span>
+        </a>
       </div>
-      <p class="fineprint">Alarm 3 hari ke depan · Pengingat 5–30 menit · Tanpa akun</p>
     </div>
     <figure class="phone" style="margin:0">
       <img src="assets/screenshots/schedule-light.png" alt="Layar jadwal shalat dengan hitung mundur dan lonceng alarm">
@@ -157,26 +189,25 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
       <article class="item">
         <span class="tile"><img src="assets/icons/ic_pixel_bell.png" alt=""></span>
         <div><h3>Alarm sekali ketuk</h3>
-          <p>Alarm terjadwal tiga hari ke depan, dan ketuk baris shalat untuk menyalakan
-          atau mematikannya — lonceng dan hitungan alarm aktif langsung berubah.</p></div>
+          <p>Ketuk baris shalat untuk menyalakan atau mematikannya. Lonceng dan jumlah
+          alarm aktif langsung berubah.</p></div>
       </article>
       <article class="item">
         <span class="tile"><img src="assets/icons/ic_pixel_pin.png" alt=""></span>
         <div><h3>Jadwal dari Kemenag</h3>
-          <p>Sumber utama Bimas Islam Kemenag, dengan Aladhan dan perhitungan di perangkat
-          sebagai cadangan saat server tidak bisa dihubungi.</p></div>
+          <p>Jadwal shalat mengikuti jadwal resmi Bimas Islam Kemenag.</p></div>
       </article>
       <article class="item">
         <span class="tile"><img src="assets/icons/ic_pixel_compass.png" alt=""></span>
         <div><h3>Kiblat di layar</h3>
-          <p>Kompas menunjuk arah kiblat dari kota yang kamu simpan, lengkap dengan
-          peringatan saat sensor perlu dikalibrasi.</p></div>
+          <p>Kompas menunjukkan arah kiblat dari kota yang kamu simpan. Kalau sensor perlu
+          dikalibrasi, aplikasi akan memberi tahu.</p></div>
       </article>
       <article class="item">
         <span class="tile"><img src="assets/icons/ic_pixel_info.png" alt=""></span>
         <div><h3>Tanpa iklan, tanpa akun</h3>
           <p>Tidak ada iklan, analitik, atau pelacakan. Jadwal dan pengaturanmu tersimpan
-          di perangkat sendiri.</p></div>
+          di perangkat, bukan di server kami.</p></div>
       </article>
     </div>
   </section>
@@ -211,8 +242,9 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
   <section class="strip">
     <div>
       <h2>Data tetap di perangkatmu.</h2>
-      <p>Tanpa akun, tanpa iklan, tanpa analitik. Lokasi hanya dibaca saat kamu
-      meminta deteksi, dan jadwal tersimpan agar aplikasi tetap bekerja tanpa internet.</p>
+      <p>Kamu tidak perlu bikin akun, dan tidak ada iklan atau analitik. Lokasi hanya
+      dibaca saat kamu minta deteksi. Jadwal disimpan di perangkat supaya aplikasi tetap
+      jalan walau sinyal lemah.</p>
     </div>
     <a href="privacy-policy/">Baca kebijakan privasi →</a>
   </section>
@@ -220,17 +252,34 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:8px}
   <section class="section" id="unduh" style="margin-top:14px">
     <div class="play-card">
       <div>
-        <h2>Siap dipakai</h2>
-        <p>Prayer Alarm akan tersedia di Google Play. Sementara itu, kebijakan
-        privasi dan kode sumbernya bisa kamu baca sekarang.</p>
+        <p class="overline">Unduh</p>
+        <h2>Sekarang ada di Google Play.</h2>
+        <p>Buka Play Store, pasang, lalu atur kota dan alarm pertamamu. Tidak perlu daftar
+        akun, dan aplikasinya ringan.</p>
+        <div class="cta-row">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">
+            <span class="glyph" aria-hidden="true">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1.5 1.6v16.8c0 .6.55 1 .98.6l13.6-8.4a.7.7 0 0 0 0-1.2L2.48 1C2.05.6 1.5 1 1.5 1.6Z" fill="#fff"/></svg>
+            </span>
+            <span><small>Dapatkan di</small><b>Google Play</b></span>
+          </a>
+        </div>
+        <p class="fineprint">Android 8.0 ke atas · Bahasa Indonesia dan Inggris</p>
       </div>
-      <span class="btn btn-disabled" aria-disabled="true">Segera di Google Play</span>
+      <aside class="qr-card" aria-label="Kode QR menuju Google Play">
+        <img class="code" src="assets/qr-playstore.svg" alt="Kode QR menuju halaman Google Play Prayer Alarm">
+        <div>
+          <b>Pindai untuk memasang</b>
+          <span>Arahkan kamera ponsel ke kode ini untuk membuka Google Play.</span>
+        </div>
+      </aside>
     </div>
   </section>
 </main>
 <footer>
   <div class="rule"></div>
   <div class="links">
+    <a href="https://play.google.com/store/apps/details?id=com.trazire.prayerapp">Google Play</a>
     <a href="privacy-policy/">Kebijakan Privasi</a>
     <a href="mailto:support@trazire.com">support@trazire.com</a>
   </div>
